@@ -25,9 +25,10 @@ android {
     }
     lint {
         warningsAsErrors = true
-        // Keep the API-36-compatible toolchain reproducible. New-version notices
-        // are not correctness failures; all source/manifest checks stay enabled.
-        disable += setOf("GradleDependency", "AndroidGradlePluginVersion")
+        // API 36 is the deliberate target in this personal-app plan. Keep the
+        // toolchain reproducible rather than failing when CI discovers newer
+        // Android/platform versions; all functional source checks stay enabled.
+        disable += setOf("GradleDependency", "AndroidGradlePluginVersion", "OldTargetApi")
     }
 }
 

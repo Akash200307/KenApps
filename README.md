@@ -68,7 +68,8 @@ The APK is debug-signed with a local Android debug key stored outside Git. Do no
 commit a keystore. GitHub Actions runs tests and lint and uploads a test APK. The
 Gradle distribution is pinned with a SHA-256 checksum. Update-version notices are
 excluded from lint so availability of a newer dependency cannot break this pinned
-build; source, resource, manifest, and permission checks remain enabled.
+build. The target-version notice is also excluded because API 36 is intentional
+for this build; source, resource, manifest, and permission checks remain enabled.
 
 Unit coverage includes reminder transitions, dismissal, rapid reconnects, pause
 timing, explicit tests, and text contrast across all six palette/light-dark
